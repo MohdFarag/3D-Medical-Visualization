@@ -1,1 +1,1 @@
-# 3D-Medical-Visualization
+# 3D Medical Visualization
