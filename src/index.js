@@ -1,3 +1,6 @@
+/* eslint-disable import/prefer-default-export */
+/* eslint-disable import/no-extraneous-dependencies */
+
 // Load the rendering pieces we want to use (for both WebGL and WebGPU)
 import '@kitware/vtk.js/Rendering/Profiles/Geometry';
 import '@kitware/vtk.js/Rendering/Profiles/Volume';
@@ -15,8 +18,6 @@ import vtkHttpDataSetReader from '@kitware/vtk.js/IO/Core/HttpDataSetReader';
 import vtkImageMarchingCubes from '@kitware/vtk.js/Filters/General/ImageMarchingCubes';
 import vtkMapper from '@kitware/vtk.js/Rendering/Core/Mapper';
 
-
-
 import { vec3, quat, mat4 } from 'gl-matrix';
 import vtkWidgetManager from '@kitware/vtk.js/Widgets/Core/WidgetManager';
 import vtkImageCroppingWidget from '@kitware/vtk.js/Widgets/Widgets3D/ImageCroppingWidget';
@@ -29,7 +30,7 @@ import vtkPlane from '@kitware/vtk.js/Common/DataModel/Plane';
 // Force the loading of HttpDataAccessHelper to support gzip decompression
 import '@kitware/vtk.js/IO/Core/DataAccessHelper/HttpDataAccessHelper';
 
-
+const __BASE_PATH__ = 'https://kitware.github.io/vtk-js/'
 const controlPanel = `
 <table>
     <tr>
@@ -73,24 +74,28 @@ const controlPanel = `
         <td><label>cornerHandlesEnabled</label></td>
         <td><input class='flag' data-name="cornerHandlesEnabled" type="checkbox" checked /></td>
       </tr>
+      <tr>
+        <td colspan="2"><div id="ray-transfer-function"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <select id="presets-menu">
+            <option selected value="Cool to Warm">Cool to Warm</option>
+            <option value="Cold and Hot">Cold and Hot</option>
+            <option value="Black, Blue and White">Black, Blue and White</option>
+            <option value="X Ray">X Ray</option>
+            <option value="erdc_rainbow_dark">Edrc Rainbow Dark</option>
+          </select>
+        </td>
+      </tr>
     </tbody>
 </table>
 
-<div id="ray-transfer-function"></div>
-<select id="presets-menu">
-    <option selected value="Cool to Warm">Cool to Warm</option>
-    <option value="Cold and Hot">Cold and Hot</option>
-    <option value="Black, Blue and White">Black, Blue and White</option>
-    <option value="X Ray">X Ray</option>
-    <option value="erdc_rainbow_dark">Edrc Rainbow Dark</option>
-</select>
-
 `
 
-const __BASE_PATH__ = 'https://kitware.github.io/vtk-js/'
 
 // ----------------------------------------------------------------------------
-// Standard rendering code setup
+// Code setup
 // ----------------------------------------------------------------------------
 
 async function renderHead() {
@@ -361,7 +366,11 @@ async function rayCastingChest() {
   document.getElementById('rayCasting').addEventListener('change', function () {
     rayCastingChest();
   });
-  
 }
 
-renderHead()
+async function start(){
+  renderHead()
+  rayCastingChest()
+}
+
+start();
