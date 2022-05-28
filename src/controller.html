@@ -1,53 +1,62 @@
 <table>
+  <tr>
+    <td><label>Load</label></td>
+    <td><input id="loadFile" type="file"></td>
+  </tr>
+  <tr>
+    <td>
+      <input id="rendering" type="radio" name="type" value="1"><label>Rendering</label>
+    </td>
+    <td>
+      <input id="rayCasting" type="radio" name="type" value="1"><label>Ray Casting</label>
+    </td>
+  </tr>
+  <tr id="layoutRendering">
+    <td><label>Iso value</label></td>
+    <td><input class='isoValue' type="range" min="0.0" max="1.0" step="0.05" value="0.0" /></td>
+  </tr>
+  <tbody id="layoutRayCasting">
     <tr>
-      <td>
-        <input id="rendering" type="radio" name="type" value="1"><label>Rendering</label>
-      </td>
-      <td>
-        <input id="rayCasting" type="radio" name="type" value="1"><label>Ray Casting</label>
+      <td><label>pickable</label></td>
+      <td><input class='flag' data-name="pickable" type="checkbox" checked /></td>
+    </tr>
+    <tr>
+      <td><label>visibility</label></td>
+      <td><input class='flag' data-name="visibility" type="checkbox" checked /></td>
+    </tr>
+    <tr>
+      <td><label>contextVisibility</label></td>
+      <td><input class='flag' data-name="contextVisibility" type="checkbox" checked /></td>
+    </tr>
+    <tr>
+      <td><label>handleVisibility</label></td>
+      <td><input class='flag' data-name="handleVisibility" type="checkbox" checked /></td>
+    </tr>
+    <tr>
+      <td><label>faceHandlesEnabled</label></td>
+      <td><input class='flag' data-name="faceHandlesEnabled" type="checkbox" checked /></td>
+    </tr>
+    <tr>
+      <td><label>edgeHandlesEnabled</label></td>
+      <td><input class='flag' data-name="edgeHandlesEnabled" type="checkbox" checked /></td>
+    </tr>
+    <tr>
+      <td><label>cornerHandlesEnabled</label></td>
+      <td><input class='flag' data-name="cornerHandlesEnabled" type="checkbox" checked /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div id="ray-transfer-function"></div></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <select id="presets-menu">
+          <option selected value="Cool to Warm">Cool to Warm</option>
+          <option value="Cold and Hot">Cold and Hot</option>
+          <option value="Black, Blue and White">Black, Blue and White</option>
+          <option value="X Ray">X Ray</option>
+          <option value="erdc_rainbow_dark">Edrc Rainbow Dark</option>
+        </select>
       </td>
     </tr>
-    <tr id="layoutRendering">
-      <td><label>Iso value</label></td>
-      <td><input class='isoValue' type="range" min="0.0" max="1.0" step="0.05" value="0.0" /></td>
-    </tr>
-    <tbody id="layoutRayCasting">
-      <tr>
-        <td><label>pickable</label></td>
-        <td><input class='flag' data-name="pickable" type="checkbox" checked /></td>
-      </tr>
-      <tr>
-        <td><label>visibility</label></td>
-        <td><input class='flag' data-name="visibility" type="checkbox" checked /></td>
-      </tr>
-      <tr>
-        <td><label>contextVisibility</label></td>
-        <td><input class='flag' data-name="contextVisibility" type="checkbox" checked /></td>
-      </tr>
-      <tr>
-        <td><label>handleVisibility</label></td>
-        <td><input class='flag' data-name="handleVisibility" type="checkbox" checked /></td>
-      </tr>
-      <tr>
-        <td><label>faceHandlesEnabled</label></td>
-        <td><input class='flag' data-name="faceHandlesEnabled" type="checkbox" checked /></td>
-      </tr>
-      <tr>
-        <td><label>edgeHandlesEnabled</label></td>
-        <td><input class='flag' data-name="edgeHandlesEnabled" type="checkbox" checked /></td>
-      </tr>
-      <tr>
-        <td><label>cornerHandlesEnabled</label></td>
-        <td><input class='flag' data-name="cornerHandlesEnabled" type="checkbox" checked /></td>
-      </tr>
-    </tbody>
+  </tbody>
 </table>
-
-<div id="ray-transfer-function"></div>
-<select id="presets-menu">
-    <option selected value="Cool to Warm">Cool to Warm</option>
-    <option value="Cold and Hot">Cold and Hot</option>
-    <option value="Black, Blue and White">Black, Blue and White</option>
-    <option value="X Ray">X Ray</option>
-    <option value="erdc_rainbow_dark">Edrc Rainbow Dark</option>
-</select>
