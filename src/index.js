@@ -36,7 +36,7 @@ const controlPanel = `
   <tr>
     <td><label>Load</label></td>
     <td>
-    <div class="${style.bigFileDrop}"/><input type="file" accept=".vti" style="display: none;"/>
+      <input type="file" accept=".vti" id="file" style="width:180px;"/>
     </td>
   </tr>
   <tr>
@@ -118,7 +118,7 @@ async function renderHead() {
   }
 
   const fullScreenRenderWindow = vtkFullScreenRenderWindow.newInstance({
-    background: [0, 0, 0],
+    background: [0.8, 0.8, 0.8],
   });
   const renderWindow = fullScreenRenderWindow.getRenderWindow();
   const renderer = fullScreenRenderWindow.getRenderer();
@@ -178,14 +178,6 @@ marchingCube.setInputConnection(reader.getOutputPort());
   document.getElementById('rayCasting').addEventListener('change', function () {
     rayCastingChest();
   });
-
-  loadFile.onchange = evt => {
-    const [file] = loadFile.files
-    if (file) {
-      srcItem = URL.createObjectURL(file)
-      // reader.setUrl(srcItem);
-    }
-  }
 }
 
 async function rayCastingChest() {
@@ -193,7 +185,7 @@ async function rayCastingChest() {
   document.body.innerHTML = ""
 
   const fullScreenRenderWindow = vtkFullScreenRenderWindow.newInstance({
-    background: [0, 0, 0],
+    background: [0.56, 0.56, 0.56],
   });
   const renderWindow = fullScreenRenderWindow.getRenderWindow();
   const renderer = fullScreenRenderWindow.getRenderer();
@@ -501,22 +493,12 @@ async function rayCastingChest() {
     rayCastingChest();
   });
 
-  loadFile.onchange = evt => {
-    const [file] = loadFile.files
-    if (file) {
-      srcItem = `${__BASE_PATH__}/data/volume/${file.name}`
-      console.log(srcItem)
-      // reader.setUrl(srcItem);
-      // renderWindow.render();
-    }
-  }
-
   global.widget1 = widget1;
 }
 
+
 async function start(){
   renderHead()
-  rayCastingChest()
 }
 
 start();

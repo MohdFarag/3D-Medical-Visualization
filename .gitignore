@@ -103,3 +103,5 @@ typings/
 .tern-port
 
 vtiFiles/
+
+package-lock.json
