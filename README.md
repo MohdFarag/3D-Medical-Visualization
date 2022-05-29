@@ -1,8 +1,6 @@
 # 3D Medical Visualization
 
-![prev image](./docs/prev4.png)|
----
-![prevVid](./docs/prev5.png)|
+![prev image](./docs/prev4.png)
 ---
 
 <b>A visualization VTK and JS code for surface rendering head and ray casting chest.</b>
@@ -25,11 +23,13 @@
 
 ## Preview (screenshots)
 
-|![prevVid](./docs/prev3.png) |
+![prevVid](./docs/prev5.png)
 ---
-![prevVid](./docs/prev1.png) |
+![prevVid](./docs/prev3.png)
 ---
-![prevVid](./docs/vid.gif) |
+![prevVid](./docs/prev1.png)
+---
+![prevVid](./docs/vid.gif)
 ---
 
 ## Issues we faced
