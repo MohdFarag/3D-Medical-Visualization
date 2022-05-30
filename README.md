@@ -29,8 +29,8 @@
 ---
 ![prevVid](./docs/prev1.png)
 ---
-![prevVid](./docs/vid.gif)
----
+<img src='./docs/vid.gif' width="1000px" />
+
 
 ## Issues we faced
 - Make adjustable transfer function. <span style="font-size:10px; color: green">Passed</span>  
