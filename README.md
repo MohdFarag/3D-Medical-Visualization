@@ -1,7 +1,6 @@
 # 3D Medical Visualization
 
-![prev image](./docs/prev4.png)
----
+<img src='./docs/vid.gif' width="1000px" />
 
 <b>A visualization VTK and JS code for surface rendering head and ray casting chest.</b>
 
@@ -23,14 +22,14 @@
 
 ## Preview (screenshots)
 
+![prev image](./docs/prev4.png)
+---
 ![prevVid](./docs/prev5.png)
 ---
 ![prevVid](./docs/prev3.png)
 ---
 ![prevVid](./docs/prev1.png)
 ---
-<img src='./docs/vid.gif' width="1000px" />
-
 
 ## Issues we faced
 - Make adjustable transfer function. <span style="font-size:10px; color: green">Passed</span>  
